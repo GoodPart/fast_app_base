@@ -1,3 +1,5 @@
+import 'package:after_layout/after_layout.dart';
+import 'package:fast_app_base/common/cli_common.dart';
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/theme/custom_theme_app.dart';
 import 'package:fast_app_base/screen/main/s_main.dart';
@@ -18,14 +20,21 @@ class App extends StatefulWidget {
   State<App> createState() => AppState();
 }
 
-class AppState extends State<App> with Nav, WidgetsBindingObserver {
+class AppState extends State<App> with Nav, WidgetsBindingObserver, AfterLayoutMixin {
   @override
   GlobalKey<NavigatorState> get navigatorKey => App.navigatorKey;
 
   @override
+  FutureOr<void> afterFirstLayout(BuildContext context) {
+    delay(() {
+      WidgetsBinding.instance.addObserver(this);
+    }, 1500.ms);
+  }
+
+  @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+
   }
 
   @override
