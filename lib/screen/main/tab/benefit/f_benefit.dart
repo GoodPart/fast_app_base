@@ -14,7 +14,7 @@ class _BenefitFragmentState extends State<BenefitFragment> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      // margin: EdgeInsets.symmetric(vertical: 20),
       color: Colors.black,
       child: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),

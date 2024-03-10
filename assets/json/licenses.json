@@ -1,4 +1,4 @@
-[
+ [
   {
     "name": "_fe_analyzer_shared",
     "description": "Logic that is shared between the front_end and analyzer packages.",
