@@ -13,9 +13,16 @@ class StockFragment extends StatefulWidget {
   State<StockFragment> createState() => _StockFragmentState();
 }
 
-class _StockFragmentState extends State<StockFragment> with SingleTickerProviderStateMixin {
+class _StockFragmentState extends State<StockFragment> with TickerProviderStateMixin {
   late final TabController controller = TabController(length: 2, vsync: this);
   int currentIndex = 0;
+
+  @override
+  void dispose() {
+
+    controller.dispose();
+    super.dispose();
+  }
 
 
   @override
@@ -23,7 +30,8 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          backgroundColor:  context.appColors.roundedLayoutBackground,
+          backgroundColor:  context.appColors.appBarBackground,
+          surfaceTintColor: context.appColors.appBarBackground,
           pinned: true,
           actions: [
             ImageButton(

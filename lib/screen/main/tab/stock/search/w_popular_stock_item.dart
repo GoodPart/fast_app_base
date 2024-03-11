@@ -20,7 +20,7 @@ class PopularStockItem extends StatelessWidget {
         width10,
         width10,
         width10,
-        stockItem.stockName.text.make(),
+        stockItem.name.text.make(),
         emptyExpanded,
         stockItem.todayPercentageString.text
             .color(stockItem.getPriceColor(context))
