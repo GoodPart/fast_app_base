@@ -3,6 +3,7 @@ import 'package:fast_app_base/common/widget/w_image_button.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/s_search_stock.dart';
 import 'package:flutter/material.dart';
 
+import 'setting/s_setting.dart';
 import 'tab/f_my_stock.dart';
 import 'tab/f_todays_discovery.dart';
 
@@ -46,7 +47,8 @@ class _StockFragmentState extends State<StockFragment> with TickerProviderStateM
                 imagePath: '$basePath/icon/stock_calendar.png'),
             ImageButton(
                 onTap: () {
-                  context.showSnackbar("설정");
+                  // context.showSnackbar("설정");
+                  Nav.push(SettingScreen());
                 },
                 imagePath: '$basePath/icon/stock_settings.png'),
           ],

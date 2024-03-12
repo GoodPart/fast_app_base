@@ -4,6 +4,7 @@ import 'package:fast_app_base/screen/notification/s_notification.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class TtossAppBar extends StatefulWidget {
   static const double appBarHeight = 60;
@@ -56,7 +57,7 @@ class _TtossAppBarState extends State<TtossAppBar> {
                 ),
               ],
             ),
-          ),
+          ).animate(onPlay: (controller)=> controller.repeat()).shake(duration: 1500.ms, hz: 3, curve: Easing.standard),
           width10,
         ],
       ),
